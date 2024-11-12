@@ -12,7 +12,7 @@ type BudgetProviderProps = {
 
 export const BudgetContext = createContext<BudgetContextProps>(null!)
 
-export const BudgetProvider = ({ children } : BudgetProviderProps) => {
+export const BudgetProvider = ({ children }: BudgetProviderProps) => {
 
   const [state, dispatch] = useReducer(budgetReducer, initialState)
 
@@ -21,7 +21,8 @@ export const BudgetProvider = ({ children } : BudgetProviderProps) => {
       value={{
         state,
         dispatch
-      }}>
+      }}
+    >
       {children}
     </BudgetContext.Provider>
   )
